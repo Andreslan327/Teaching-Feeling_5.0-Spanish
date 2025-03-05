@@ -20,6 +20,10 @@ Este proyecto tiene como objetivo la traducción al español de la versión 5.0 
 
 ---
 
+## 📥 Descarga el Juego Base
+Para aplicar el parche de traducción, primero necesitas el juego base. Descárgalo desde el siguiente enlace:
+[🔗 Enlace de descarga] (Pega aquí tu enlace de Google Drive)
+
 ## 📥 Cómo Aplicar el Parche
 
 1. Descarga el archivo más reciente desde la pestaña **Releases**.
