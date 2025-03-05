@@ -1,4 +1,6 @@
 # Capturas de pantalla del proyecto
+## **NOTA:**
+### Asi como estan traducidos estas opciones de comida, también lo estan las demas, como el pundín, wafles, etc...
 
 ## Entrada con bienvenida a la cafetería
 ![Bienvenida de la camarera 02](https://github.com/Andreslan327/Teaching-Feeling_5.0-Spanish/blob/main/Capturas%20de%20pantalla/Caf%C3%A9_Entrada.jpg?raw=true)
