@@ -12,7 +12,7 @@ Este proyecto tiene como objetivo la traducción al español de la versión 5.0 
 
 ### ✅ Progreso de Traducción
 
-- 🔄 Dialogos al hablar con Sylvie desde el menu en casa (cabe calcar que son tantos dialogos, aunque parecen pocos, la cosa es traducir todas sus variantes respuesta de Sylvie)
+- 🔄 Dialogos al hablar con Sylvie desde el menu en casa (cabe calcar que son tantos dialogos, aunque parecen pocos, la cosa es traducir todas sus variantes respuestas de Sylvie al protagonista)
 - 🔄 Menú principal y opciones (en progreso)
 - ⏳ Interfaz de usuario (pendiente)
 - ⏳ Diálogos principales (pendiente)
