@@ -12,11 +12,11 @@ Este proyecto tiene como objetivo la traducción al español de la versión 5.0 
 
 ### ✅ Progreso de Traducción
 
-- ⏳ Menú principal y opciones (pendiente)
+- 🔄 Menú principal y opciones (en progreso)
 - ⏳ Interfaz de usuario (pendiente)
 - ⏳ Diálogos principales (pendiente)
 - ⏳ Eventos secundarios (pendiente)
-- 🔄 Diálogos en la cafetería (en progreso)
+- ✅ Diálogos en la cafetería (Terminado)
 
 ---
 
