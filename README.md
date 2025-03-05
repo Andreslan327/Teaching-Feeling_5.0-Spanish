@@ -1,5 +1,4 @@
-# Teaching Feeling 5.0 - Traducción al español
-
+## ![TITULO](https://github.com/Andreslan327/Teaching-Feeling_5.0-Spanish/blob/f3df1a2073e4142f391e6251d0f1dedb720ba45b/Capturas%20de%20pantalla/Traducci%C3%B3n%20de%20Teaching%20Feeling%205.0.png)
 Este proyecto tiene como objetivo la traducción al español de la versión 5.0 del videojuego **Teaching Feeling**. La traducción se distribuirá como un **parche**, el cual se aplicará sobre el juego base.
 
 ---
