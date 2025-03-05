@@ -14,9 +14,9 @@ Este proyecto tiene como objetivo la traducción al español de la versión 5.0 
 
 - ⏳ Menú principal y opciones (pendiente)
 - ⏳ Interfaz de usuario (pendiente)
-- 🔄 Diálogos en la cafetería (en progreso)
 - ⏳ Diálogos principales (pendiente)
 - ⏳ Eventos secundarios (pendiente)
+- 🔄 Diálogos en la cafetería (en progreso)
 
 ---
 
