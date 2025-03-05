@@ -43,7 +43,7 @@ Este proyecto solo se encarga de la traducción. No se distribuye el juego origi
 
 ## 📌 Contacto y Feedback
 
-Si encuentras errores en la traducción o quieres sugerir mejoras, puedes abrir un **Issue** en este repositorio o dejar un comentario en la sección de discusiones.
+Si encuentras errores en la traducción o quieres sugerir mejoras, puedes abrir un **Issue** en este repositorio o dejar un comentario en la sección de discusiones. O también puedes dejarme un mensaje por correo electronico: andres.lan.lags@proton.me
 
 ---
 
