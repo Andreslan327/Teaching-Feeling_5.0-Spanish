@@ -27,9 +27,9 @@ Este proyecto tiene como objetivo la traducción al español de la versión 5.0 
 
 ## 📥 Cómo Aplicar el Parche
 
-1. Descarga el archivo más reciente desde la pestaña **Releases**.
-2. Extrae el contenido del ZIP en la carpeta del juego base.
-3. Sobrescribe los archivos.
+1. Descarga el parche más reciente desde la pestaña **Releases**.
+2. Ejecuta el SetUp, y seleciona la carpeta del juego base.
+3. Procede a instalar el parche el cual s eextraerá todo automaticamente.
 4. Ejecuta el juego y disfruta la traducción.
 
 ---
