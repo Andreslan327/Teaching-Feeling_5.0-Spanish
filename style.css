@@ -3,90 +3,125 @@
 
 /* --- CONFIGURACIÓN DE VARIABLES --- */
 :root {
-    --bg-top: #0d1118;            /* Tu color azul-grisáceo exacto */
-    --bg-bottom: #140502;         /* Negro-Naranja sangre oscuro */
-    --card-bg: rgba(18, 22, 28, 0.8); /* Oscuro y sutilmente transparente */
-    --accent-color: #d14124;      /* Naranja sangre base */
-    --accent-hover: #ff5733;      /* Naranja encendido */
-    --text-color: #e2e2e6;
-    --text-muted: #8e9aa8;
+    --card-bg: rgba(10, 10, 12, 0.65); /* Más transparente para que se note el movimiento del fondo */
+    --accent-color: #ff4500;       /* Naranja fuerte brillante */
+    --accent-blood: #800020;       /* Rojo sangre profundo */
+    --text-color: #e6e6fa;
+    --text-muted: #9fa8b3;
 }
 
-/* --- CUERPO GENERAL Y DEGRADADO --- */
+/* --- EL FONDO LÍQUIDO EN MOVIMIENTO (NIVEL DIOS) --- */
 body {
-    font-family: 'Tai Heritage Pro', serif; /* Fuente asignada para los cuerpos de texto */
-    background: linear-gradient(to bottom, 
-        var(--bg-top) 0%, 
-        var(--bg-top) 280px,    /* Mantiene el color sólido en la zona del título */
-        #080a0f 50%,            /* Transición oscura intermedia */
-        var(--bg-bottom) 100%   /* Finaliza abajo en naranja sangre oscuro */
-    );
-    background-attachment: fixed;
+    font-family: 'Tai Heritage Pro', serif;
     color: var(--text-color);
     margin: 0;
     padding: 0;
     line-height: 1.7;
     font-size: 1.1rem;
+    min-height: 100vh;
+
+    /* Base negra profunda */
+    background-color: #050505; 
+    
+    /* Múltiples esferas de color degradadas superpuestas */
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(128, 0, 32, 0.45) 0px, transparent 50%),   /* Rojo Sangre Top Izquierda */
+        radial-gradient(at 100% 0%, rgba(255, 69, 0, 0.35) 0px, transparent 50%), /* Naranja Fuerte Top Derecha */
+        radial-gradient(at 50% 50%, rgba(20, 5, 5, 0.9) 0px, transparent 100%),   /* Centro oscuro de contraste */
+        radial-gradient(at 0% 100%, rgba(255, 69, 0, 0.3) 0px, transparent 60%),  /* Naranja Fuerte Base Izquierda */
+        radial-gradient(at 100% 100%, rgba(140, 10, 10, 0.5) 0px, transparent 50%);/* Rojo vivo Base Derecha */
+    
+    /* Expandimos el tamaño del fondo para que la animación tenga espacio para desplazarse */
+    background-size: 200% 200%;
+    background-attachment: fixed;
+    
+    /* Disparador de la animación diablesca */
+    animation: fluidoMaligno 18s ease infinite alternate;
+}
+
+/* --- ANIMACIÓN ULTRA FLUIDA Y SUAVE --- */
+@keyframes fluidoMaligno {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 50% 100%;
+    }
 }
 
 .container {
     max-width: 850px;
     margin: 0 auto;
     padding: 20px;
+    position: relative;
+    z-index: 2; /* Asegura que el contenido flote sobre el fondo */
 }
 
 /* --- ENCABEZADO TIPOGRÁFICO --- */
 header {
     text-align: center;
-    padding: 70px 20px 40px 20px;
-    background-color: var(--bg-top); /* Fondo plano #0d1118 estricto */
+    padding: 90px 20px 50px 20px;
+    position: relative;
+    z-index: 2;
 }
 
 header h1 {
-    font-family: 'Cormorant Garamond', serif; /* Fuente asignada solo para el título */
-    font-size: 4.5rem;                        /* Tamaño masivo para compensar la falta de imagen */
-    font-weight: 400;
-    letter-spacing: 4px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem; /* Más masivo e imponente */
+    font-weight: 300;
+    letter-spacing: 6px;
     margin: 0;
     color: #ffffff;
     line-height: 1;
     text-transform: uppercase;
+    /* Efecto visual: Sombra gótica suave detrás del texto para separarlo del fondo */
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.9), 0 5px 15px rgba(128, 0, 32, 0.4);
 }
 
 header .subtitle {
-    font-family: 'Cormorant Garamond', serif; /* Subtítulo con la misma familia pero con estilo itálico */
+    font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     color: var(--accent-color);
-    font-size: 1.5rem;
-    margin-top: 15px;
-    letter-spacing: 1px;
+    font-size: 1.6rem;
+    margin-top: 20px;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
 }
 
-/* --- SECCIONES / TARJETAS --- */
+/* --- SECCIONES CON EFECTO BLUR (GLASSMORPHISM OSCURO) --- */
 section {
     background-color: var(--card-bg);
-    padding: 35px;
-    margin: 40px 0;
-    border-radius: 4px;
+    padding: 40px;
+    margin: 50px 0;
+    border-radius: 6px;
+    /* Borde sutil naranja sangre a la izquierda */
     border-left: 3px solid var(--accent-color);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(4px);
+    /* El truco del almendruco: Desenfoque de fondo para que el gradiente se vea difuminado detrás de las tarjetas */
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    
+    /* Sombra profunda para dar volumen */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255,255,255,0.05);
+    border-top: 1px solid rgba(255, 69, 0, 0.1);
 }
 
 section h2 {
-    font-family: 'Cormorant Garamond', serif; /* Subtítulos de sección */
-    font-size: 2.2rem;
-    font-weight: 600;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 500;
     margin-top: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 69, 0, 0.2);
+    padding-bottom: 12px;
     color: #ffffff;
     letter-spacing: 1px;
 }
 
-/* --- REMARCACIONES Y SUBTÍTULOS INTERNOS --- */
+/* --- REMARCACIONES INTERNAS --- */
 .highlight {
-    font-family: 'Cormorant Garamond', serif; /* Fuente para resaltar textos/etiquetas clave */
+    font-family: 'Cormorant Garamond', serif;
     font-size: 1.3rem;
     font-weight: 600;
     letter-spacing: 1px;
@@ -100,21 +135,23 @@ section h2 {
 .progress-label {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .progress-bar-bg {
-    background-color: #0b0d13;
-    height: 12px;
-    border-radius: 6px;
+    background-color: rgba(5, 5, 7, 0.8);
+    height: 10px;
+    border-radius: 5px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .progress-bar-fill {
-    background: linear-gradient(90deg, #992610, var(--accent-color));
+    /* Barra que va de rojo sangre a naranja fuerte brillante */
+    background: linear-gradient(90deg, var(--accent-blood), var(--accent-color));
     height: 100%;
-    border-radius: 6px;
+    border-radius: 5px;
+    box-shadow: 0 0 8px var(--accent-color);
 }
 
 /* --- BOTONES DE DESCARGA --- */
@@ -127,31 +164,33 @@ section h2 {
 
 .btn {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     font-weight: 600;
-    background-color: var(--accent-color);
+    background: linear-gradient(135deg, var(--accent-blood), var(--accent-color));
     color: #ffffff;
-    padding: 12px 32px;
+    padding: 14px 36px;
     text-decoration: none;
-    border-radius: 2px;
-    transition: all 0.3s ease;
+    border-radius: 3px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     letter-spacing: 1px;
-    box-shadow: 0 4px 15px rgba(209, 65, 36, 0.15);
+    box-shadow: 0 4px 15px rgba(255, 69, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .btn:hover {
-    background-color: var(--accent-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(255, 87, 51, 0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 69, 0, 0.45);
+    border-color: var(--accent-color);
 }
 
 .btn-secondary {
-    background-color: #1c212b;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    background: rgba(20, 24, 33, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .btn-secondary:hover {
-    background-color: #282f3d;
+    background: rgba(35, 42, 56, 0.8);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* --- LISTAS Y CHANGELOG --- */
@@ -167,31 +206,33 @@ li {
 }
 
 li::before {
-    content: "†"; /* Un toque clásico/gótico acorde a las fuentes */
+    content: "†";
     color: var(--accent-color);
     position: absolute;
     left: 0;
     top: 0;
     font-size: 1.1rem;
+    text-shadow: 0 0 5px var(--accent-color);
 }
 
 .version-tag {
     font-family: 'Cormorant Garamond', serif;
-    color: var(--accent-color);
-    background-color: #1c212b;
-    padding: 2px 10px;
-    border-radius: 2px;
+    color: #ffffff;
+    background-color: var(--accent-blood);
+    padding: 3px 12px;
+    border-radius: 3px;
     font-size: 1rem;
     font-weight: 700;
-    border: 1px solid rgba(209, 65, 36, 0.2);
+    border: 1px solid var(--accent-color);
 }
 
 /* --- PIE DE PÁGINA --- */
 footer {
     text-align: center;
-    padding: 60px 20px;
-    color: #56616f;
+    padding: 70px 20px;
+    color: #4a525d;
     font-size: 0.95rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.03);
-    background-color: rgba(13, 17, 24, 0.4);
+    border-top: 1px solid rgba(255, 69, 0, 0.05);
+    background-color: rgba(5, 5, 5, 0.6);
+    backdrop-filter: blur(8px);
 }
