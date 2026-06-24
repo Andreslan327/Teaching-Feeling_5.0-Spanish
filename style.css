@@ -38,17 +38,17 @@ h1, h2, h3 {
     padding: 20px;
 }
 
-/* --- ENCABEZADO Y LOGO PRINCIPAL --- */
+/* --- ENCABEZADO Y LOGO PRINCIPAL (TU TÍTULO REAL) --- */
 header {
     text-align: center;
-    padding: 60px 20px 40px 20px;
-    background-color: var(--bg-top); /* Garantiza que el fondo de la cabecera sea tu color sólido */
+    padding: 80px 20px 40px 20px;
+    background-color: var(--bg-top); /* Tu color exacto #0d1118 sin alteraciones */
 }
 
 .header-logo {
-    max-width: 95%; /* Permite que se adapte a pantallas móviles sin salirse */
+    max-width: 100%; /* Se adapta al reviente en cualquier pantalla */
     height: auto;
-    width: 850px; /* Tamaño más imponente y grande para el título principal */
+    width: 1050px; /* Tamaño masivo para que sea el título absoluto de la página */
     display: block;
     margin: 0 auto;
 }
@@ -57,9 +57,25 @@ header p {
     color: var(--text-muted);
     font-size: 1.2rem;
     font-family: 'Cinzel', serif;
-    margin-top: 25px;
+    margin-top: 30px;
     letter-spacing: 3px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+/* --- DISEÑO DEL CUERPO (EL DEGRADADO INFERIOR) --- */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(to bottom, 
+        var(--bg-top) 0%, 
+        var(--bg-top) 450px,   /* Mantiene el color plano hasta cubrir bien la zona del título */
+        #09090b 70%,           /* Transición oscura intermedia */
+        var(--bg-bottom) 100%  /* El remate negro-naranja sangre en el fondo */
+    );
+    background-attachment: fixed;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
 
 /* --- TARJETAS DE INFORMACIÓN --- */
