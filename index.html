@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- ==========================================================================
-       ⚙️ CONFIGURACIÓN METADATOS Y CONTROL MÓVIL
-       ========================================================================== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Teaching Feeling - Traducción al Español</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Un pequeño retoque para que tu enlace en el subtítulo se vea nítido y no como un link azul feo */
         header .subtitle a {
             color: var(--accent-color);
             text-decoration: none;
@@ -24,25 +20,34 @@
 </head>
 <body>
 
-    <!-- ==========================================================================
-       👑 ENCABEZADO PRINCIPAL (CON TU CANAL DE YOUTUBE)
-       ========================================================================== -->
+    <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav class="sidebar-menu" id="sidebarMenu">
+        <div class="menu-header">Navegación</div>
+        <ul>
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li><a href="galery.html">Galería de Fotos</a></li>
+        </ul>
+    </nav>
+    
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+
     <header>
         <h1>Teaching Feeling</h1>
         <p class="subtitle">Traducción por parte de <a href="https://www.youtube.com/@andres_lan2969" target="_blank">Andrés Lan</a></p>
     </header>
 
-    <!-- ==========================================================================
-       📦 CONTENEDOR DE CUADROS PRINCIPALES (REORDENADO Y CONFIGURADO)
-       ========================================================================== -->
     <div class="container">
 
-        <!-- 📊 CUADRO 1: ESTADO DEL PROGRESO (AHORA DE PRIMERO Y BARRA ÚNICA) -->
         <section id="progress">
             <h2>Estado del Progreso</h2>
             <p>Esto incluye escenas, imagenes, dialogos y todo el contenido del juego en general.</p>
             
-            <!-- Barra Única Global al 49% -->
             <div class="progress-wrapper" style="margin-top: 30px;">
                 <div class="progress-label">
                     <span class="highlight">Progreso General</span>
@@ -54,7 +59,6 @@
             </div>
         </section>
 
-        <!-- 📥 CUADRO 2: DESCARGAS Y BOTONES -->
         <section id="download">
             <h2>Descargas y Enlaces</h2>
             <p>Selecciona tu plataforma para descargar el parche o la versión correspondiente. Asegúrate de leer las instrucciones de instalación incluidas.</p>
@@ -64,7 +68,6 @@
             </div>
         </section>
 
-        <!-- 💬 CUADRO 3: CONTACTO Y COMUNIDAD (NUEVA CAJA CON TELEGRAM Y GITHUB) -->
         <section id="contact">
             <h2>Contacto</h2>
             <p>Únete a nuestra comunidad para recibir soporte, reportar errores o estar al tanto de las novedades del parche en tiempo real.</p>
@@ -74,7 +77,6 @@
             </div>
         </section>
 
-        <!-- 📜 CUADRO 4: SOBRE EL PROYECTO (AHORA DE ÚLTIMO) -->
         <section id="about">
             <h2>Sobre el Proyecto</h2>
             <p>¡Bienvenido! Esta es la página oficial para seguir el progreso y descargar la traducción al español de la novela visual <strong>Teaching Feeling</strong>. Nuestro objetivo es ofrecer una traducción fiel, adaptada y testeada para que disfrutes de la experiencia completa sin perder ningún detalle de la historia.</p>
@@ -82,12 +84,29 @@
 
     </div>
 
-    <!-- ==========================================================================
-       🩸 PIE DE PÁGINA (CON TU FIRMA EXCLUSIVA)
-       ========================================================================== -->
     <footer>
         <p>&copy; 2026 - Creado por Andrés Lan para la comunidad.</p>
     </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebarMenu = document.getElementById('sidebarMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+
+        // Función para abrir/cerrar
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('open');
+            sidebarMenu.classList.toggle('open');
+            menuOverlay.classList.toggle('open');
+        });
+
+        // Cerrar si hacen clic fuera del menú
+        menuOverlay.addEventListener('click', () => {
+            menuToggle.classList.remove('open');
+            sidebarMenu.classList.remove('open');
+            menuOverlay.classList.remove('open');
+        });
+    </script>
 
 </body>
 </html>

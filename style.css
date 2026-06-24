@@ -286,3 +286,144 @@ footer {
         box-sizing: border-box;
     }
 }
+
+/* ==========================================================================
+   🍔 ESTILOS DEL MENÚ HAMBURGUESA FLUIDO (NIVEL DIOS)
+   ========================================================================== */
+
+/* Botón de las 3 rayitas fijo en la esquina */
+.menu-toggle {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    width: 40px;
+    height: 30px;
+    z-index: 100;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* Animación de las rayitas transformándose en "X" al abrir */
+.menu-toggle.open span:nth-child(1) {
+    transform: translateY(13px) rotate(45deg);
+    background-color: var(--accent-color);
+}
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+    transform: translateY(-13px) rotate(-45deg);
+    background-color: var(--accent-color);
+}
+
+/* El panel del menú lateral */
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Escondido por defecto a la derecha */
+    width: 280px;
+    height: 100vh;
+    background-color: rgba(10, 10, 12, 0.9); /* Oscuro gótico con transparencia */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.8);
+    z-index: 99;
+    transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    padding: 80px 30px;
+    box-sizing: border-box;
+    border-left: 2px solid var(--accent-blood);
+}
+
+.sidebar-menu.open {
+    right: 0; /* Se desliza hacia adentro */
+}
+
+.menu-header {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 69, 0, 0.2);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.sidebar-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    margin-bottom: 25px;
+    padding-left: 0;
+}
+
+.sidebar-menu li::before {
+    content: ""; /* Eliminamos la daga aquí para que el menú sea limpio */
+}
+
+.sidebar-menu a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.sidebar-menu a:hover, 
+.sidebar-menu a.active {
+    color: var(--accent-color);
+    padding-left: 10px; /* Efecto de desplazamiento sutil al pasar el mouse */
+    text-shadow: 0 0 10px rgba(255, 69, 0, 0.4);
+}
+
+/* Capa oscura que bloquea el resto de la pantalla al abrir */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 98;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.menu-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Ajuste responsive para que el botón no estorbe en pantallas pequeñas */
+@media (max-width: 768px) {
+    .menu-toggle {
+        top: 20px;
+        right: 20px;
+        width: 35px;
+        height: 25px;
+    }
+    .menu-toggle.open span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
+    .menu-toggle.open span:nth-child(3) { transform: translateY(-11px) rotate(-45deg); }
+    
+    .sidebar-menu {
+        width: 240px;
+    }
+}
