@@ -236,3 +236,59 @@ footer {
     background-color: rgba(5, 5, 5, 0.6);
     backdrop-filter: blur(8px);
 }
+
+/* ==========================================================================
+   🛠️ SECCIÓN RESPONSIVA: EL ARREGLO PARA ANDROID / MÓVILES
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* Ajustamos el fondo animado para que no consuma tantos recursos en móvil */
+    body {
+        font-size: 1rem;
+        background-size: 150% 150%; /* Menos estirado en pantallas chicas */
+    }
+
+    .container {
+        padding: 10px; /* Reducimos el espacio externo */
+    }
+
+    /* EL ARREGLO DEL TÍTULO PRINCIPAL */
+    header {
+        padding: 50px 15px 30px 15px; /* Menos espacio arriba */
+    }
+
+    header h1 {
+        font-size: 2.8rem; /* Bajamos de 5rem a un tamaño que sí quepa en Android */
+        letter-spacing: 3px; /* Juntamos un pelo más las letras */
+    }
+
+    header .subtitle {
+        font-size: 1.2rem;
+        margin-top: 15px;
+    }
+
+    /* OPTIMIZACIÓN DE TARJETAS (SECTIONS) */
+    section {
+        padding: 22px;   /* Menos espacio interno para que el texto aproveche la pantalla */
+        margin: 25px 0;  /* Menos separación entre bloques */
+        border-radius: 4px;
+    }
+
+    section h2 {
+        font-size: 1.8rem; /* Subtítulos más acordes al tamaño de un celular */
+        padding-bottom: 8px;
+    }
+
+    /* AJUSTE DE LOS BOTONES DE DESCARGA */
+    .btn-container {
+        gap: 12px; /* Espacio más cerrado entre botones */
+    }
+
+    .btn {
+        width: 100%;       /* Hace que los botones ocupen todo el ancho disponible */
+        text-align: center; /* Centra el texto del botón */
+        padding: 14px 20px;
+        font-size: 1.1rem;
+        box-sizing: border-box; /* Evita que el botón se salga por los lados */
+    }
+}
