@@ -1,102 +1,98 @@
-/* --- CONFIGURACIÓN DE COLORES DE ALTA OSCURIDAD --- */
+/* --- IMPORTACIÓN DE FUENTES DESDE GOOGLE FONTS --- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Tai+Heritage+Pro:wght@400;700&display=swap');
+
+/* --- CONFIGURACIÓN DE VARIABLES --- */
 :root {
-    --bg-top: #0d1118;            /* El azul-grisáceo exacto que pediste */
+    --bg-top: #0d1118;            /* Tu color azul-grisáceo exacto */
     --bg-bottom: #140502;         /* Negro-Naranja sangre oscuro */
-    --card-bg: rgba(20, 22, 28, 0.75); /* Oscuro y semitransparente para fusionarse con el fondo */
-    --accent-color: #d14124;      /* Naranja sangre brillante para contrastes */
-    --accent-hover: #ff5733;      /* Brillo naranja al pasar el cursor */
+    --card-bg: rgba(18, 22, 28, 0.8); /* Oscuro y sutilmente transparente */
+    --accent-color: #d14124;      /* Naranja sangre base */
+    --accent-hover: #ff5733;      /* Naranja encendido */
     --text-color: #e2e2e6;
     --text-muted: #8e9aa8;
 }
 
-/* --- DISEÑO DEL CUERPO (EL DEGRADADO) --- */
+/* --- CUERPO GENERAL Y DEGRADADO --- */
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Tai Heritage Pro', serif; /* Fuente asignada para los cuerpos de texto */
     background: linear-gradient(to bottom, 
         var(--bg-top) 0%, 
-        var(--bg-top) 300px,    /* Bloquea tu color plano en la zona alta del logo */
-        #09090b 55%,            /* Transición a un negro profundo neutro */
-        var(--bg-bottom) 100%   /* Naranja sangre infernal en la base */
-    );
-    background-attachment: fixed; /* El degradado se queda estático mientras bajas */
-    color: var(--text-color);
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-}
-
-/* --- TIPOGRAFÍAS --- */
-h1, h2, h3 {
-    font-family: 'Cinzel', serif;
-    color: #ffffff;
-    letter-spacing: 1px;
-}
-
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* --- ENCABEZADO Y LOGO PRINCIPAL (TU TÍTULO REAL) --- */
-header {
-    text-align: center;
-    padding: 80px 20px 40px 20px;
-    background-color: var(--bg-top); /* Tu color exacto #0d1118 sin alteraciones */
-}
-
-.header-logo {
-    max-width: 100%; /* Se adapta al reviente en cualquier pantalla */
-    height: auto;
-    width: 1050px; /* Tamaño masivo para que sea el título absoluto de la página */
-    display: block;
-    margin: 0 auto;
-}
-
-header p {
-    color: var(--text-muted);
-    font-size: 1.2rem;
-    font-family: 'Cinzel', serif;
-    margin-top: 30px;
-    letter-spacing: 3px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
-}
-
-/* --- DISEÑO DEL CUERPO (EL DEGRADADO INFERIOR) --- */
-body {
-    font-family: 'Open Sans', sans-serif;
-    background: linear-gradient(to bottom, 
-        var(--bg-top) 0%, 
-        var(--bg-top) 450px,   /* Mantiene el color plano hasta cubrir bien la zona del título */
-        #09090b 70%,           /* Transición oscura intermedia */
-        var(--bg-bottom) 100%  /* El remate negro-naranja sangre en el fondo */
+        var(--bg-top) 280px,    /* Mantiene el color sólido en la zona del título */
+        #080a0f 50%,            /* Transición oscura intermedia */
+        var(--bg-bottom) 100%   /* Finaliza abajo en naranja sangre oscuro */
     );
     background-attachment: fixed;
     color: var(--text-color);
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    line-height: 1.7;
+    font-size: 1.1rem;
 }
 
-/* --- TARJETAS DE INFORMACIÓN --- */
+.container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- ENCABEZADO TIPOGRÁFICO --- */
+header {
+    text-align: center;
+    padding: 70px 20px 40px 20px;
+    background-color: var(--bg-top); /* Fondo plano #0d1118 estricto */
+}
+
+header h1 {
+    font-family: 'Cormorant Garamond', serif; /* Fuente asignada solo para el título */
+    font-size: 4.5rem;                        /* Tamaño masivo para compensar la falta de imagen */
+    font-weight: 400;
+    letter-spacing: 4px;
+    margin: 0;
+    color: #ffffff;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+header .subtitle {
+    font-family: 'Cormorant Garamond', serif; /* Subtítulo con la misma familia pero con estilo itálico */
+    font-style: italic;
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin-top: 15px;
+    letter-spacing: 1px;
+}
+
+/* --- SECCIONES / TARJETAS --- */
 section {
     background-color: var(--card-bg);
     padding: 35px;
     margin: 40px 0;
-    border-radius: 6px;
-    border-left: 4px solid var(--accent-color);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(4px); /* Suaviza lo que se ve detrás de la tarjeta */
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-color);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
 }
 
 section h2 {
+    font-family: 'Cormorant Garamond', serif; /* Subtítulos de sección */
+    font-size: 2.2rem;
+    font-weight: 600;
     margin-top: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 12px;
-    color: #f0f0f5;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 10px;
+    color: #ffffff;
+    letter-spacing: 1px;
 }
 
-/* --- SECCIÓN DE PROGRESO (BARRAS DE TRADUCCIÓN) --- */
+/* --- REMARCACIONES Y SUBTÍTULOS INTERNOS --- */
+.highlight {
+    font-family: 'Cormorant Garamond', serif; /* Fuente para resaltar textos/etiquetas clave */
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* --- BARRAS DE PROGRESO --- */
 .progress-wrapper {
     margin-bottom: 25px;
 }
@@ -104,25 +100,21 @@ section h2 {
 .progress-label {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 8px;
-    font-weight: 600;
-    font-size: 0.95rem;
+    margin-bottom: 6px;
 }
 
 .progress-bar-bg {
-    background-color: #1a1c23;
-    height: 16px;
-    border-radius: 8px;
+    background-color: #0b0d13;
+    height: 12px;
+    border-radius: 6px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .progress-bar-fill {
     background: linear-gradient(90deg, #992610, var(--accent-color));
     height: 100%;
-    border-radius: 8px;
-    transition: width 1s ease-in-out;
-    box-shadow: 0 0 10px rgba(209, 65, 36, 0.5);
+    border-radius: 6px;
 }
 
 /* --- BOTONES DE DESCARGA --- */
@@ -134,32 +126,32 @@ section h2 {
 }
 
 .btn {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
     background-color: var(--accent-color);
     color: #ffffff;
-    padding: 14px 30px;
+    padding: 12px 32px;
     text-decoration: none;
-    font-weight: bold;
-    border-radius: 4px;
+    border-radius: 2px;
     transition: all 0.3s ease;
-    font-family: 'Cinzel', serif;
     letter-spacing: 1px;
-    box-shadow: 0 4px 15px rgba(209, 65, 36, 0.2);
+    box-shadow: 0 4px 15px rgba(209, 65, 36, 0.15);
 }
 
 .btn:hover {
     background-color: var(--accent-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 87, 51, 0.4);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(255, 87, 51, 0.35);
 }
 
 .btn-secondary {
-    background-color: #252932;
+    background-color: #1c212b;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .btn-secondary:hover {
-    background-color: #353b47;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    background-color: #282f3d;
 }
 
 /* --- LISTAS Y CHANGELOG --- */
@@ -174,33 +166,32 @@ li {
     padding-left: 20px;
 }
 
-/* Agrega un puntito naranja personalizado a cada elemento de la lista */
 li::before {
-    content: "•";
+    content: "†"; /* Un toque clásico/gótico acorde a las fuentes */
     color: var(--accent-color);
-    font-weight: bold;
-    font-size: 1.3rem;
     position: absolute;
     left: 0;
-    top: -2px;
+    top: 0;
+    font-size: 1.1rem;
 }
 
 .version-tag {
-    background-color: #252932;
+    font-family: 'Cormorant Garamond', serif;
     color: var(--accent-color);
-    padding: 3px 10px;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    font-weight: bold;
-    border: 1px solid rgba(209, 65, 36, 0.3);
+    background-color: #1c212b;
+    padding: 2px 10px;
+    border-radius: 2px;
+    font-size: 1rem;
+    font-weight: 700;
+    border: 1px solid rgba(209, 65, 36, 0.2);
 }
 
 /* --- PIE DE PÁGINA --- */
 footer {
     text-align: center;
-    padding: 50px 20px;
-    color: #626e7c;
-    font-size: 0.85rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    background-color: rgba(13, 17, 24, 0.5);
+    padding: 60px 20px;
+    color: #56616f;
+    font-size: 0.95rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    background-color: rgba(13, 17, 24, 0.4);
 }
