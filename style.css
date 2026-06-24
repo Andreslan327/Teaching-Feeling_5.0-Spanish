@@ -3,81 +3,85 @@
 
 /* --- CONFIGURACIÓN DE VARIABLES --- */
 :root {
-    --card-bg: rgba(10, 10, 12, 0.65); /* Más transparente para que se note el movimiento del fondo */
+    --card-bg: rgba(10, 10, 12, 0.65); 
     --accent-color: #ff4500;       /* Naranja fuerte brillante */
     --accent-blood: #800020;       /* Rojo sangre profundo */
     --text-color: #e6e6fa;
     --text-muted: #9fa8b3;
 }
 
-/* --- EL FONDO LÍQUIDO EN MOVIMIENTO (NIVEL DIOS) --- */
+/* --- ESTRUCTURA ANTI-ZOOM Y BLINDAJE MÓVIL --- */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* El secreto definitivo: evita que la pantalla se descuadre o haga zoom hacia los lados */
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* --- EL FONDO LÍQUIDO EN MOVIMIENTO --- */
 body {
     font-family: 'Tai Heritage Pro', serif;
     color: var(--text-color);
-    margin: 0;
-    padding: 0;
     line-height: 1.7;
     font-size: 1.1rem;
     min-height: 100vh;
-
-    /* Base negra profunda */
     background-color: #050505; 
     
     /* Múltiples esferas de color degradadas superpuestas */
     background-image: 
-        radial-gradient(at 0% 0%, rgba(128, 0, 32, 0.45) 0px, transparent 50%),   /* Rojo Sangre Top Izquierda */
-        radial-gradient(at 100% 0%, rgba(255, 69, 0, 0.35) 0px, transparent 50%), /* Naranja Fuerte Top Derecha */
-        radial-gradient(at 50% 50%, rgba(20, 5, 5, 0.9) 0px, transparent 100%),   /* Centro oscuro de contraste */
-        radial-gradient(at 0% 100%, rgba(255, 69, 0, 0.3) 0px, transparent 60%),  /* Naranja Fuerte Base Izquierda */
-        radial-gradient(at 100% 100%, rgba(140, 10, 10, 0.5) 0px, transparent 50%);/* Rojo vivo Base Derecha */
+        radial-gradient(at 0% 0%, rgba(128, 0, 32, 0.45) 0px, transparent 50%),   
+        radial-gradient(at 100% 0%, rgba(255, 69, 0, 0.35) 0px, transparent 50%), 
+        radial-gradient(at 50% 50%, rgba(20, 5, 5, 0.9) 0px, transparent 100%),   
+        radial-gradient(at 0% 100%, rgba(255, 69, 0, 0.3) 0px, transparent 60%),  
+        radial-gradient(at 100% 100%, rgba(140, 10, 10, 0.5) 0px, transparent 50%);
     
-    /* Expandimos el tamaño del fondo para que la animación tenga espacio para desplazarse */
     background-size: 200% 200%;
     background-attachment: fixed;
-    
-    /* Disparador de la animación diablesca */
     animation: fluidoMaligno 18s ease infinite alternate;
 }
 
-/* --- ANIMACIÓN ULTRA FLUIDA Y SUAVE --- */
+/* --- ANIMACIÓN FLUIDA DE FONDO --- */
 @keyframes fluidoMaligno {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 50% 100%;
-    }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 50% 100%; }
 }
 
+/* --- CONTENEDOR PRINCIPAL CONTROLADO --- */
 .container {
+    width: 100%;
     max-width: 850px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 20px;
     position: relative;
-    z-index: 2; /* Asegura que el contenido flote sobre el fondo */
+    z-index: 2;
 }
 
-/* --- ENCABEZADO TIPOGRÁFICO --- */
+/* --- ENCABEZADO TIPOGRÁFICO (PC) --- */
 header {
     text-align: center;
     padding: 90px 20px 50px 20px;
     position: relative;
     z-index: 2;
+    width: 100%;
 }
 
 header h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 5rem; /* Más masivo e imponente */
+    font-size: 5rem; 
     font-weight: 300;
     letter-spacing: 6px;
-    margin: 0;
+    margin: 0 auto;
     color: #ffffff;
-    line-height: 1;
+    line-height: 1.1;
     text-transform: uppercase;
-    /* Efecto visual: Sombra gótica suave detrás del texto para separarlo del fondo */
+    word-wrap: break-word; /* Evita que el texto largo rompa la pantalla */
     text-shadow: 0 0 20px rgba(0, 0, 0, 0.9), 0 5px 15px rgba(128, 0, 32, 0.4);
 }
 
@@ -91,19 +95,15 @@ header .subtitle {
     text-shadow: 0 2px 8px rgba(0,0,0,0.8);
 }
 
-/* --- SECCIONES CON EFECTO BLUR (GLASSMORPHISM OSCURO) --- */
+/* --- TARJETAS CON EFECTO BLUR (GLASSMORPHISM) --- */
 section {
     background-color: var(--card-bg);
     padding: 40px;
-    margin: 50px 0;
+    margin: 40px 0;
     border-radius: 6px;
-    /* Borde sutil naranja sangre a la izquierda */
     border-left: 3px solid var(--accent-color);
-    /* El truco del almendruco: Desenfoque de fondo para que el gradiente se vea difuminado detrás de las tarjetas */
     backdrop-filter: blur(12px); 
     -webkit-backdrop-filter: blur(12px);
-    
-    /* Sombra profunda para dar volumen */
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255,255,255,0.05);
     border-top: 1px solid rgba(255, 69, 0, 0.1);
 }
@@ -119,7 +119,7 @@ section h2 {
     letter-spacing: 1px;
 }
 
-/* --- REMARCACIONES INTERNAS --- */
+/* --- ELEMENTOS DE INTERFAZ --- */
 .highlight {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.3rem;
@@ -127,7 +127,6 @@ section h2 {
     letter-spacing: 1px;
 }
 
-/* --- BARRAS DE PROGRESO --- */
 .progress-wrapper {
     margin-bottom: 25px;
 }
@@ -147,7 +146,6 @@ section h2 {
 }
 
 .progress-bar-fill {
-    /* Barra que va de rojo sangre a naranja fuerte brillante */
     background: linear-gradient(90deg, var(--accent-blood), var(--accent-color));
     height: 100%;
     border-radius: 5px;
@@ -193,7 +191,7 @@ section h2 {
     border-color: rgba(255, 255, 255, 0.2);
 }
 
-/* --- LISTAS Y CHANGELOG --- */
+/* --- LISTAS --- */
 ul {
     list-style-type: none;
     padding-left: 0;
@@ -238,57 +236,52 @@ footer {
 }
 
 /* ==========================================================================
-   🛠️ SECCIÓN RESPONSIVA: EL ARREGLO PARA ANDROID / MÓVILES
+   🛠️ ADAPTACIÓN TOTAL PARA ANDROID / MÓVILES (MÁXIMA EFECTIVIDAD)
    ========================================================================== */
-
 @media (max-width: 768px) {
-    /* Ajustamos el fondo animado para que no consuma tantos recursos en móvil */
     body {
         font-size: 1rem;
-        background-size: 150% 150%; /* Menos estirado en pantallas chicas */
+        background-size: 180% 180%; /* Ajuste fino de la escala en celular */
     }
 
     .container {
-        padding: 10px; /* Reducimos el espacio externo */
+        padding: 0 15px; /* Evita que las tarjetas toquen el borde físico del teléfono */
     }
 
-    /* EL ARREGLO DEL TÍTULO PRINCIPAL */
     header {
-        padding: 50px 15px 30px 15px; /* Menos espacio arriba */
+        padding: 60px 10px 30px 10px;
     }
 
     header h1 {
-        font-size: 2.8rem; /* Bajamos de 5rem a un tamaño que sí quepa en Android */
-        letter-spacing: 3px; /* Juntamos un pelo más las letras */
+        font-size: 2.5rem; /* Ajustado perfectamente para que quepa en cualquier Android sin romper líneas */
+        letter-spacing: 2px;
+        line-height: 1.2;
     }
 
     header .subtitle {
-        font-size: 1.2rem;
-        margin-top: 15px;
+        font-size: 1.1rem;
+        margin-top: 12px;
+        padding: 0 10px;
     }
 
-    /* OPTIMIZACIÓN DE TARJETAS (SECTIONS) */
     section {
-        padding: 22px;   /* Menos espacio interno para que el texto aproveche la pantalla */
-        margin: 25px 0;  /* Menos separación entre bloques */
-        border-radius: 4px;
+        padding: 20px;   /* Reduce el espacio interno para dar más área de lectura */
+        margin: 30px 0;  
     }
 
     section h2 {
-        font-size: 1.8rem; /* Subtítulos más acordes al tamaño de un celular */
+        font-size: 1.7rem; 
         padding-bottom: 8px;
     }
 
-    /* AJUSTE DE LOS BOTONES DE DESCARGA */
     .btn-container {
-        gap: 12px; /* Espacio más cerrado entre botones */
+        gap: 10px;
     }
 
     .btn {
-        width: 100%;       /* Hace que los botones ocupen todo el ancho disponible */
-        text-align: center; /* Centra el texto del botón */
-        padding: 14px 20px;
+        width: 100%;       /* Botones adaptables al 100% del ancho del dispositivo */
+        text-align: center; 
+        padding: 12px 15px;
         font-size: 1.1rem;
-        box-sizing: border-box; /* Evita que el botón se salga por los lados */
     }
 }
