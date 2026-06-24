@@ -4,181 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teaching Feeling - Traducción al Español</title>
+    
+    <!-- Fuentes desde Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     
-    <style>
-        /* --- ESTILOS GENERALES (Estética Novela Visual) --- */
-        :root {
-            --bg-color: #121214;
-            --card-bg: #1a1a1e;
-            --accent-color: #a32a42; /* Vino tinto */
-            --accent-hover: #cf3c5a;
-            --text-color: #e2e2e6;
-            --text-muted: #a0a0a8;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Cinzel', serif;
-            color: #ffffff;
-            letter-spacing: 1px;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* --- CABECERA --- */
-        header {
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(to bottom, rgba(26,26,30,0.8), var(--bg-color));
-            border-bottom: 2px solid var(--accent-color);
-        }
-
-        header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px rgba(163, 42, 66, 0.5);
-        }
-
-        header p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-        }
-
-        /* --- SECCIONES / TARJETAS --- */
-        section {
-            background-color: var(--card-bg);
-            padding: 30px;
-            margin: 30px 0;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent-color);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        }
-
-        section h2 {
-            margin-top: 0;
-            border-bottom: 1px solid #333;
-            padding-bottom: 10px;
-        }
-
-        /* --- BARRAS DE PROGRESO --- */
-        .progress-wrapper {
-            margin-bottom: 20px;
-        }
-
-        .progress-label {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-
-        .progress-bar-bg {
-            background-color: #2a2a30;
-            height: 20px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .progress-bar-fill {
-            background: linear-gradient(90deg, var(--accent-color), #de4765);
-            height: 100%;
-            border-radius: 10px;
-            transition: width 1s ease-in-out;
-        }
-
-        /* --- BOTONES DE DESCARGA --- */
-        .btn-container {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .btn {
-            background-color: var(--accent-color);
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background 0.3s, transform 0.2s;
-            font-family: 'Cinzel', serif;
-        }
-
-        .btn:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background-color: #3a3a42;
-        }
-
-        .btn-secondary:hover {
-            background-color: #4e4e59;
-        }
-
-        /* --- CHANGELOG / REQUISITOS --- */
-        ul {
-            list-style-type: square;
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        .version-tag {
-            background-color: var(--accent-color);
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: bold;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            border-top: 1px solid #222;
-        }
-    </style>
+    <!-- Enlace al archivo CSS separado -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <h1>Teaching Feeling</h1>
+        <!-- Tu logo/título principal desde la carpeta assets -->
+        <img src="assets/principal.png" alt="Teaching Feeling" class="header-logo">
         <p>Proyecto de Traducción Fan-Made al Español</p>
     </header>
 
     <div class="container">
 
+        <!-- SECCIÓN: SOBRE EL PROYECTO -->
         <section id="about">
             <h2>Sobre el Proyecto</h2>
             <p>¡Bienvenido! Esta es la página oficial para seguir el progreso y descargar la traducción al español de la novela visual <strong>Teaching Feeling</strong>. Nuestro objetivo es ofrecer una traducción fiel, adaptada y testeada para que disfrutes de la experiencia completa sin perder ningún detalle de la historia.</p>
         </section>
 
+        <!-- SECCIÓN: ESTADO DE LA TRADUCCIÓN -->
         <section id="progress">
             <h2>Estado del Progreso</h2>
             <p>Actualizado constantemente a medida que avanzamos en los archivos del juego.</p>
             
+            <!-- Barra 1: Textos -->
             <div class="progress-wrapper">
                 <div class="progress-label">
                     <span>Historia Principal / Textos</span>
@@ -189,6 +45,7 @@
                 </div>
             </div>
 
+            <!-- Barra 2: Interfaz -->
             <div class="progress-wrapper">
                 <div class="progress-label">
                     <span>Interfaz y Menús</span>
@@ -199,6 +56,7 @@
                 </div>
             </div>
 
+            <!-- Barra 3: Gráficos -->
             <div class="progress-wrapper">
                 <div class="progress-label text-muted">
                     <span>Texturas / Gráficos Editados</span>
@@ -210,6 +68,7 @@
             </div>
         </section>
 
+        <!-- SECCIÓN: DESCARGAS -->
         <section id="download">
             <h2>Descargas y Enlaces</h2>
             <p>Selecciona tu plataforma para descargar el parche o la versión correspondiente. Asegúrate de leer las instrucciones de instalación incluidas.</p>
@@ -219,6 +78,7 @@
             </div>
         </section>
 
+        <!-- SECCIÓN: LOG DE CAMBIOS -->
         <section id="changelog">
             <h2>Historial de Versiones</h2>
             <p><span class="version-tag">v1.1</span> - <em>Última actualización</em></p>
@@ -239,7 +99,7 @@
 
     <footer>
         <p>Este es un proyecto sin fines de lucro realizado por fans y para fans.</p>
-        <p>&copy; 2026 - Creado con ❤️ para la comunidad.</p>
+        <p>&copy; 2026 - Creado con 🩸 para la comunidad.</p>
     </footer>
 
 </body>

@@ -1,0 +1,191 @@
+/* --- CONFIGURACIÓN DE COLORES DE ALTA OSCURIDAD --- */
+:root {
+    --bg-top: #0d1118;            /* El azul-grisáceo exacto que pediste */
+    --bg-bottom: #140502;         /* Negro-Naranja sangre oscuro */
+    --card-bg: rgba(20, 22, 28, 0.75); /* Oscuro y semitransparente para fusionarse con el fondo */
+    --accent-color: #d14124;      /* Naranja sangre brillante para contrastes */
+    --accent-hover: #ff5733;      /* Brillo naranja al pasar el cursor */
+    --text-color: #e2e2e6;
+    --text-muted: #8e9aa8;
+}
+
+/* --- DISEÑO DEL CUERPO (EL DEGRADADO) --- */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(to bottom, 
+        var(--bg-top) 0%, 
+        var(--bg-top) 300px,    /* Bloquea tu color plano en la zona alta del logo */
+        #09090b 55%,            /* Transición a un negro profundo neutro */
+        var(--bg-bottom) 100%   /* Naranja sangre infernal en la base */
+    );
+    background-attachment: fixed; /* El degradado se queda estático mientras bajas */
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* --- TIPOGRAFÍAS --- */
+h1, h2, h3 {
+    font-family: 'Cinzel', serif;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- ENCABEZADO Y LOGO PRINCIPAL --- */
+header {
+    text-align: center;
+    padding: 50px 20px 30px 20px;
+    background-color: var(--bg-top); /* Garantiza que el fondo de la cabecera sea tu color sólido */
+}
+
+.header-logo {
+    max-width: 100%;
+    height: auto;
+    width: 550px; /* Tamaño ideal para el título */
+    filter: drop-shadow(0 0 20px rgba(209, 65, 36, 0.25)); /* Aura naranja sutil tras tu PNG */
+    display: block;
+    margin: 0 auto;
+}
+
+header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    font-family: 'Cinzel', serif;
+    margin-top: 20px;
+    letter-spacing: 3px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* --- TARJETAS DE INFORMACIÓN --- */
+section {
+    background-color: var(--card-bg);
+    padding: 35px;
+    margin: 40px 0;
+    border-radius: 6px;
+    border-left: 4px solid var(--accent-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px); /* Suaviza lo que se ve detrás de la tarjeta */
+}
+
+section h2 {
+    margin-top: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 12px;
+    color: #f0f0f5;
+}
+
+/* --- SECCIÓN DE PROGRESO (BARRAS DE TRADUCCIÓN) --- */
+.progress-wrapper {
+    margin-bottom: 25px;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.progress-bar-bg {
+    background-color: #1a1c23;
+    height: 16px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.progress-bar-fill {
+    background: linear-gradient(90deg, #992610, var(--accent-color));
+    height: 100%;
+    border-radius: 8px;
+    transition: width 1s ease-in-out;
+    box-shadow: 0 0 10px rgba(209, 65, 36, 0.5);
+}
+
+/* --- BOTONES DE DESCARGA --- */
+.btn-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.btn {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    padding: 14px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(209, 65, 36, 0.2);
+}
+
+.btn:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 87, 51, 0.4);
+}
+
+.btn-secondary {
+    background-color: #252932;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary:hover {
+    background-color: #353b47;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* --- LISTAS Y CHANGELOG --- */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Agrega un puntito naranja personalizado a cada elemento de la lista */
+li::before {
+    content: "•";
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 1.3rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+.version-tag {
+    background-color: #252932;
+    color: var(--accent-color);
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border: 1px solid rgba(209, 65, 36, 0.3);
+}
+
+/* --- PIE DE PÁGINA --- */
+footer {
+    text-align: center;
+    padding: 50px 20px;
+    color: #626e7c;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: rgba(13, 17, 24, 0.5);
+}
