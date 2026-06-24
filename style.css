@@ -41,24 +41,23 @@ h1, h2, h3 {
 /* --- ENCABEZADO Y LOGO PRINCIPAL --- */
 header {
     text-align: center;
-    padding: 50px 20px 30px 20px;
+    padding: 60px 20px 40px 20px;
     background-color: var(--bg-top); /* Garantiza que el fondo de la cabecera sea tu color sólido */
 }
 
 .header-logo {
-    max-width: 100%;
+    max-width: 95%; /* Permite que se adapte a pantallas móviles sin salirse */
     height: auto;
-    width: 550px; /* Tamaño ideal para el título */
-    filter: drop-shadow(0 0 20px rgba(209, 65, 36, 0.25)); /* Aura naranja sutil tras tu PNG */
+    width: 850px; /* Tamaño más imponente y grande para el título principal */
     display: block;
     margin: 0 auto;
 }
 
 header p {
     color: var(--text-muted);
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-family: 'Cinzel', serif;
-    margin-top: 20px;
+    margin-top: 25px;
     letter-spacing: 3px;
     text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
