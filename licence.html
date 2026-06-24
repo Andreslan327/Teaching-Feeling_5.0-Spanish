@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Licencia - Teaching Feeling Spanish</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        header .subtitle a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        header .subtitle a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px var(--accent-color);
+        }
+        /* Estilo especial para que el texto legal de la licencia resalte en bloque */
+        .legal-text {
+            font-family: monospace;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 69, 0, 0.1);
+            color: #d1d5db;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            white-space: pre-wrap; /* Mantiene los saltos de línea del texto legal */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav class="sidebar-menu" id="sidebarMenu">
+        <div class="menu-header">Navegación</div>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="galery.html">Galería de Fotos</a></li>
+            <li><a href="licence.html" class="active">Licencia</a></li> </ul>
+    </nav>
+    
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <header>
+        <h1>Licencia Oficial</h1>
+        <p class="subtitle">Traducción por parte de <a href="https://www.youtube.com/@andres_lan2969" target="_blank">Andrés Lan</a></p>
+    </header>
+
+    <div class="container">
+
+        <section id="explication">
+            <h2>Términos de Uso</h2>
+            <p>Para que hablemos en claro y sin enredos, esto es lo que debes saber sobre este parche de traducción:</p>
+            <ul>
+                <li><strong>Es completamente gratis:</strong> Este proyecto fue hecho por un fan para la comunidad. No debes pagar nada por él.</li>
+                <li><strong>Cero soporte obligatorio:</strong> Yo les comparto mi trabajo con todo el gusto, pero no tengo la obligación de dar soporte técnico personalizado, ni arreglar fallas en sus dispositivos.</li>
+                <li><strong>Distribución libre:</strong> Puedes compartir el parche donde quieras, siempre y cuando respetes los créditos correspondientes.</li>
+            </ul>
+        </section>
+
+        <section id="mit-text">
+            <h2>MIT License</h2>
+            <p>A continuación se detalla la licencia legal que rige este proyecto:</p>
+            
+            <div class="legal-text">Copyright (c) 2026 Andrés Lan
+
+Por la presente se concede permiso, de forma gratuita, a cualquier persona que obtenga una copia de este software y de los archivos de documentación asociados (el "Software"), para utilizar el Software sin restricción, incluyendo, sin limitación, los derechos de uso, copia, modificación, fusión, publicación, distribución, sublicenciamiento y/o venta de copias del Software, sujeto a la siguiente condición:
+
+El aviso de copyright anterior y este aviso de permiso se incluirán en todas las copias o partes sustanciales del Software.
+
+EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O IMPLÍCITA, INCLUYENDO PERO NO LIMITADO A GARANTÍAS DE COMERCIABILIDAD, ADECUACIÓN PARA UN PROPÓSITO PARTICULAR Y NO INFRACCIÓN. EN NINGÚN CASO LOS AUTORES O TITULARES DEL COPYRIGHT SERÁN RESPONSABLES DE NINGUNA RECLAMACIÓN, DAÑOS U OTRA RESPONSABILIDAD, YA SEA EN UNA ACCIÓN DE CONTRATO, AGRAVIO O DE OTRO MODO, QUE SURJA DE, FUERA DE O EN CONEXIÓN CON EL SOFTWARE O EL USO U OTROS TRATOS EN EL SOFTWARE.</div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 - Creado por Andrés Lan para la comunidad.</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebarMenu = document.getElementById('sidebarMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('open');
+            sidebarMenu.classList.toggle('open');
+            menuOverlay.classList.toggle('open');
+        });
+
+        menuOverlay.addEventListener('click', () => {
+            menuToggle.classList.remove('open');
+            sidebarMenu.classList.remove('open');
+            menuOverlay.classList.remove('open');
+        });
+    </script>
+
+</body>
+</html>
