@@ -4,19 +4,19 @@
 /* --- CONFIGURACIÓN DE VARIABLES --- */
 :root {
     --card-bg: rgba(10, 10, 12, 0.65); 
-    --accent-color: #ff4500;       /* Naranja fuerte brillante */
-    --accent-blood: #800020;       /* Rojo sangre profundo */
+    --accent-color: #ff4500;       
+    --accent-blood: #800020;       
     --text-color: #e6e6fa;
     --text-muted: #9fa8b3;
 }
 
-/* --- ESTRUCTURA ANTI-ZOOM Y BLINDAJE MÓVIL --- */
+/* --- BLINDAJE ABSOLUTO ANTI-DESBORDE Y CENTRADO --- */
 html, body {
     width: 100%;
     max-width: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* El secreto definitivo: evita que la pantalla se descuadre o haga zoom hacia los lados */
+    overflow-x: hidden; 
     box-sizing: border-box;
 }
 
@@ -24,7 +24,6 @@ html, body {
     box-sizing: inherit;
 }
 
-/* --- EL FONDO LÍQUIDO EN MOVIMIENTO --- */
 body {
     font-family: 'Tai Heritage Pro', serif;
     color: var(--text-color);
@@ -33,7 +32,14 @@ body {
     min-height: 100vh;
     background-color: #050505; 
     
-    /* Múltiples esferas de color degradadas superpuestas */
+    /* Configuración de alineación central para el body */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center; /* Centra textos por defecto */
+    
+    /* Fondo animado líquido */
     background-image: 
         radial-gradient(at 0% 0%, rgba(128, 0, 32, 0.45) 0px, transparent 50%),   
         radial-gradient(at 100% 0%, rgba(255, 69, 0, 0.35) 0px, transparent 50%), 
@@ -46,42 +52,40 @@ body {
     animation: fluidoMaligno 18s ease infinite alternate;
 }
 
-/* --- ANIMACIÓN FLUIDA DE FONDO --- */
 @keyframes fluidoMaligno {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 50% 100%; }
 }
 
-/* --- CONTENEDOR PRINCIPAL CONTROLADO --- */
+/* --- CONTENEDOR CENTRAL CONTROLADO --- */
 .container {
     width: 100%;
-    max-width: 850px;
-    margin: 0 auto;
+    max-width: 800px; /* Un pelo más estrecho para centrar mejor el impacto visual */
     padding: 0 20px;
     position: relative;
     z-index: 2;
 }
 
-/* --- ENCABEZADO TIPOGRÁFICO (PC) --- */
+/* --- ENCABEZADO CENTRADO TOTAL --- */
 header {
-    text-align: center;
-    padding: 90px 20px 50px 20px;
+    width: 100%;
+    max-width: 800px;
+    padding: 80px 20px 40px 20px;
     position: relative;
     z-index: 2;
-    width: 100%;
+    margin: 0 auto;
 }
 
 header h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 5rem; 
+    font-size: 4.8rem; 
     font-weight: 300;
-    letter-spacing: 6px;
-    margin: 0 auto;
+    letter-spacing: 4px;
+    margin: 0;
     color: #ffffff;
     line-height: 1.1;
     text-transform: uppercase;
-    word-wrap: break-word; /* Evita que el texto largo rompa la pantalla */
     text-shadow: 0 0 20px rgba(0, 0, 0, 0.9), 0 5px 15px rgba(128, 0, 32, 0.4);
 }
 
@@ -89,40 +93,41 @@ header .subtitle {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     color: var(--accent-color);
-    font-size: 1.6rem;
-    margin-top: 20px;
-    letter-spacing: 2px;
+    font-size: 1.5rem;
+    margin-top: 18px;
+    letter-spacing: 1px;
     text-shadow: 0 2px 8px rgba(0,0,0,0.8);
 }
 
-/* --- TARJETAS CON EFECTO BLUR (GLASSMORPHISM) --- */
+/* --- TARJETAS CENTRADAS CORREGIDAS --- */
 section {
     background-color: var(--card-bg);
     padding: 40px;
-    margin: 40px 0;
+    margin: 35px 0;
     border-radius: 6px;
-    border-left: 3px solid var(--accent-color);
+    border-top: 2px solid var(--accent-color); /* Borde superior para mantener simetría central */
     backdrop-filter: blur(12px); 
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255,255,255,0.05);
-    border-top: 1px solid rgba(255, 69, 0, 0.1);
+    text-align: left; /* Mantiene la lectura del contenido alineada a la izquierda dentro de la tarjeta */
 }
 
 section h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     font-weight: 500;
     margin-top: 0;
     border-bottom: 1px solid rgba(255, 69, 0, 0.2);
     padding-bottom: 12px;
     color: #ffffff;
     letter-spacing: 1px;
+    text-align: center; /* Títulos de secciones bien centrados */
 }
 
-/* --- ELEMENTOS DE INTERFAZ --- */
+/* --- BARRAS DE PROGRESO --- */
 .highlight {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 600;
     letter-spacing: 1px;
 }
@@ -139,8 +144,8 @@ section h2 {
 
 .progress-bar-bg {
     background-color: rgba(5, 5, 7, 0.8);
-    height: 10px;
-    border-radius: 5px;
+    height: 12px;
+    border-radius: 6px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.03);
 }
@@ -148,25 +153,26 @@ section h2 {
 .progress-bar-fill {
     background: linear-gradient(90deg, var(--accent-blood), var(--accent-color));
     height: 100%;
-    border-radius: 5px;
+    border-radius: 6px;
     box-shadow: 0 0 8px var(--accent-color);
 }
 
-/* --- BOTONES DE DESCARGA --- */
+/* --- BOTONES ALINEADOS AL CENTRO --- */
 .btn-container {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
+    justify-content: center; /* Centra los botones en PC */
     margin-top: 25px;
 }
 
 .btn {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 600;
     background: linear-gradient(135deg, var(--accent-blood), var(--accent-color));
     color: #ffffff;
-    padding: 14px 36px;
+    padding: 12px 30px;
     text-decoration: none;
     border-radius: 3px;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -188,7 +194,6 @@ section h2 {
 
 .btn-secondary:hover {
     background: rgba(35, 42, 56, 0.8);
-    border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* --- LISTAS --- */
@@ -210,7 +215,6 @@ li::before {
     left: 0;
     top: 0;
     font-size: 1.1rem;
-    text-shadow: 0 0 5px var(--accent-color);
 }
 
 .version-tag {
@@ -224,10 +228,11 @@ li::before {
     border: 1px solid var(--accent-color);
 }
 
-/* --- PIE DE PÁGINA --- */
+/* --- FOOTER CENTRADO --- */
 footer {
+    width: 100%;
     text-align: center;
-    padding: 70px 20px;
+    padding: 60px 20px;
     color: #4a525d;
     font-size: 0.95rem;
     border-top: 1px solid rgba(255, 69, 0, 0.05);
@@ -236,24 +241,23 @@ footer {
 }
 
 /* ==========================================================================
-   🛠️ ADAPTACIÓN TOTAL PARA ANDROID / MÓVILES (MÁXIMA EFECTIVIDAD)
+   🛠️ CORRECCIÓN DEFINITIVA ANDROID / MÓVILES (ANTI-ZOOM TOTAL)
    ========================================================================== */
 @media (max-width: 768px) {
     body {
         font-size: 1rem;
-        background-size: 180% 180%; /* Ajuste fino de la escala en celular */
     }
 
     .container {
-        padding: 0 15px; /* Evita que las tarjetas toquen el borde físico del teléfono */
+        padding: 0 12px; /* Espaciado simétrico para celulares */
     }
 
     header {
-        padding: 60px 10px 30px 10px;
+        padding: 50px 10px 25px 10px;
     }
 
     header h1 {
-        font-size: 2.5rem; /* Ajustado perfectamente para que quepa en cualquier Android sin romper líneas */
+        font-size: 2.4rem; /* Ajuste perfecto para pantallas Android estándar */
         letter-spacing: 2px;
         line-height: 1.2;
     }
@@ -261,27 +265,24 @@ footer {
     header .subtitle {
         font-size: 1.1rem;
         margin-top: 12px;
-        padding: 0 10px;
     }
 
     section {
-        padding: 20px;   /* Reduce el espacio interno para dar más área de lectura */
-        margin: 30px 0;  
+        padding: 22px;   /* Mayor optimización de lectura */
+        margin: 25px 0;  
     }
 
     section h2 {
-        font-size: 1.7rem; 
-        padding-bottom: 8px;
+        font-size: 1.6rem; 
     }
 
     .btn-container {
-        gap: 10px;
+        gap: 12px;
+        width: 100%;
     }
 
     .btn {
-        width: 100%;       /* Botones adaptables al 100% del ancho del dispositivo */
-        text-align: center; 
-        padding: 12px 15px;
-        font-size: 1.1rem;
+        width: 100%; /* Botones adaptables limpios a pantalla completa táctil */
+        box-sizing: border-box;
     }
 }
