@@ -8,68 +8,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Teaching Feeling - Traducción al Español</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Un pequeño retoque para que tu enlace en el subtítulo se vea nítido y no como un link azul feo */
+        header .subtitle a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        header .subtitle a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px var(--accent-color);
+        }
+    </style>
 </head>
 <body>
 
     <!-- ==========================================================================
-       👑 ENCABEZADO PRINCIPAL DE LA PÁGINA
+       👑 ENCABEZADO PRINCIPAL (CON TU CANAL DE YOUTUBE)
        ========================================================================== -->
     <header>
         <h1>Teaching Feeling</h1>
-        <p class="subtitle">Proyecto de Traducción Fan-Made al Español</p>
+        <p class="subtitle">Traducción por parte de <a href="https://www.youtube.com/@andres_lan2969" target="_blank">Andrés Lan</a></p>
     </header>
 
     <!-- ==========================================================================
-       📦 CONTENEDOR DE CUADROS PRINCIPALES
+       📦 CONTENEDOR DE CUADROS PRINCIPALES (REORDENADO Y CONFIGURADO)
        ========================================================================== -->
     <div class="container">
 
-        <!-- 📜 CUADRO 1: SOBRE EL PROYECTO -->
-        <section id="about">
-            <h2>Sobre el Proyecto</h2>
-            <p>¡Bienvenido! Esta es la página oficial para seguir el progreso y descargar la traducción al español de la novela visual <strong>Teaching Feeling</strong>. Nuestro objetivo es ofrecer una traducción fiel, adaptada y testeada para que disfrutes de la experiencia completa sin perder ningún detalle de la historia.</p>
-        </section>
-
-        <!-- 📊 CUADRO 2: ESTADO DEL PROGRESO (BARRAS) -->
+        <!-- 📊 CUADRO 1: ESTADO DEL PROGRESO (AHORA DE PRIMERO Y BARRA ÚNICA) -->
         <section id="progress">
             <h2>Estado del Progreso</h2>
-            <p>Actualizado constantemente a medida que avanzamos en los archivos del juego.</p>
+            <p>Esto incluye escenas, imagenes, dialogos y todo el contenido del juego en general.</p>
             
-            <!-- Barra 1: Historia Principal -->
-            <div class="progress-wrapper">
+            <!-- Barra Única Global al 49% -->
+            <div class="progress-wrapper" style="margin-top: 30px;">
                 <div class="progress-label">
-                    <span class="highlight">Historia Principal / Textos</span>
-                    <span class="highlight">75%</span>
+                    <span class="highlight">Progreso General</span>
+                    <span class="highlight">49%</span>
                 </div>
                 <div class="progress-bar-bg">
-                    <div class="progress-bar-fill" style="width: 75%;"></div>
-                </div>
-            </div>
-
-            <!-- Barra 2: Interfaz -->
-            <div class="progress-wrapper">
-                <div class="progress-label">
-                    <span class="highlight">Interfaz y Menús</span>
-                    <span class="highlight">100%</span>
-                </div>
-                <div class="progress-bar-bg">
-                    <div class="progress-bar-fill" style="width: 100%;"></div>
-                </div>
-            </div>
-
-            <!-- Barra 3: Texturas -->
-            <div class="progress-wrapper">
-                <div class="progress-label">
-                    <span class="highlight text-muted">Texturas / Gráficos Editados</span>
-                    <span class="highlight text-muted">40%</span>
-                </div>
-                <div class="progress-bar-bg">
-                    <div class="progress-bar-fill" style="width: 40%;"></div>
+                    <div class="progress-bar-fill" style="width: 49%;"></div>
                 </div>
             </div>
         </section>
 
-        <!-- 📥 CUADRO 3: DESCARGAS Y BOTONES -->
+        <!-- 📥 CUADRO 2: DESCARGAS Y BOTONES -->
         <section id="download">
             <h2>Descargas y Enlaces</h2>
             <p>Selecciona tu plataforma para descargar el parche o la versión correspondiente. Asegúrate de leer las instrucciones de instalación incluidas.</p>
@@ -79,14 +64,29 @@
             </div>
         </section>
 
+        <!-- 💬 CUADRO 3: CONTACTO Y COMUNIDAD (NUEVA CAJA CON TELEGRAM Y GITHUB) -->
+        <section id="contact">
+            <h2>Contacto</h2>
+            <p>Únete a nuestra comunidad para recibir soporte, reportar errores o estar al tanto de las novedades del parche en tiempo real.</p>
+            <div class="btn-container">
+                <a href="https://t.me/+kTbMTQbJQuFhNDE5" class="btn" target="_blank" style="background: linear-gradient(135deg, #0088cc, var(--accent-color));">Grupo de Telegram</a>
+                <a href="https://github.com/Andreslan327/Teaching-Feeling_5.0-Spanish" class="btn btn-secondary" target="_blank">Nuestro GitHub</a>
+            </div>
+        </section>
+
+        <!-- 📜 CUADRO 4: SOBRE EL PROYECTO (AHORA DE ÚLTIMO) -->
+        <section id="about">
+            <h2>Sobre el Proyecto</h2>
+            <p>¡Bienvenido! Esta es la página oficial para seguir el progreso y descargar la traducción al español de la novela visual <strong>Teaching Feeling</strong>. Nuestro objetivo es ofrecer una traducción fiel, adaptada y testeada para que disfrutes de la experiencia completa sin perder ningún detalle de la historia.</p>
+        </section>
+
     </div>
 
     <!-- ==========================================================================
-       🩸 PIE DE PÁGINA (FOOTER)
+       🩸 PIE DE PÁGINA (CON TU FIRMA EXCLUSIVA)
        ========================================================================== -->
     <footer>
-        <p>Este es un proyecto sin fines de lucro realizado por fans y para fans.</p>
-        <p>&copy; 2026 - Creado con 🩸 para la comunidad.</p>
+        <p>&copy; 2026 - Creado por Andrés Lan para la comunidad.</p>
     </footer>
 
 </body>
