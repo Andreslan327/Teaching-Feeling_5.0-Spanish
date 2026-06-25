@@ -18,6 +18,7 @@ html, body {
     padding: 0;
     overflow-x: hidden; 
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 *, *:before, *:after {
@@ -67,7 +68,7 @@ body {
     z-index: 2;
 }
 
-/* --- ENCABEZADO CENTRADO TOTAL --- */
+/* --- ENCABEZADO CENTRADO TOTAL CON APARICIÓN SUAVE --- */
 header {
     width: 100%;
     max-width: 800px;
@@ -75,6 +76,20 @@ header {
     position: relative;
     z-index: 2;
     margin: 0 auto;
+    animation: entradaHeader 1.2s cubic-bezier(0.21, 1.02, 0.43, 1.01) forwards;
+}
+
+@keyframes entradaHeader {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
 }
 
 header h1 {
@@ -99,7 +114,7 @@ header .subtitle {
     text-shadow: 0 2px 8px rgba(0,0,0,0.8);
 }
 
-/* --- TARJETAS CENTRADAS CORREGIDAS --- */
+/* --- TARJETAS CON EFECTO REVELADO AL BAJAR (ANIMATION TIMELINE) --- */
 section {
     background-color: var(--card-bg);
     padding: 40px;
@@ -108,8 +123,38 @@ section {
     border-top: 2px solid var(--accent-color); /* Borde superior para mantener simetría central */
     backdrop-filter: blur(12px); 
     -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255,255,255,0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.05);
     text-align: left; /* Mantiene la lectura del contenido alineada a la izquierda dentro de la tarjeta */
+    
+    /* Configuración de la animación fluida progresiva */
+    view-transition-name: card-reveal;
+    animation: revealOnScroll linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 40%;
+    transition: box-shadow 0.4s ease, border-top-color 0.4s ease, transform 0.4s ease;
+}
+
+/* Efecto hover interactivo en los cuadros */
+section:hover {
+    transform: translateY(-3px);
+    border-top-color: #ffffff;
+    box-shadow: 0 20px 45px rgba(128, 0, 32, 0.4), 0 5px 15px rgba(0, 0, 0, 0.6), inset 0 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+/* Animación clave para desvanecer el blur y la opacidad progresivamente */
+@keyframes revealOnScroll {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.96);
+        filter: blur(12px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+    }
 }
 
 section h2 {
@@ -157,7 +202,7 @@ section h2 {
     box-shadow: 0 0 8px var(--accent-color);
 }
 
-/* --- BOTONES ALINEADOS AL CENTRO --- */
+/* --- BOTONES DINÁMICOS Y EXPLORABLES --- */
 .btn-container {
     display: flex;
     gap: 15px;
@@ -179,12 +224,18 @@ section h2 {
     letter-spacing: 1px;
     box-shadow: 0 4px 15px rgba(255, 69, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
 }
 
 .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 69, 0, 0.45);
-    border-color: var(--accent-color);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(255, 69, 0, 0.5), 0 0 15px rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+}
+
+.btn:active {
+    transform: translateY(-1px) scale(0.99);
 }
 
 .btn-secondary {
@@ -270,6 +321,8 @@ footer {
     section {
         padding: 22px;   /* Mayor optimización de lectura */
         margin: 25px 0;  
+        /* Suavizado leve de rango en pantallas móviles para mejorar rendimiento táctil */
+        animation-range: entry 5% cover 30%; 
     }
 
     section h2 {

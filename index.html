@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- ==========================================================================
+       ⚙️ CONFIGURACIÓN METADATOS Y CONTROL MÓVIL
+       ========================================================================== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
@@ -28,6 +31,9 @@
 </head>
 <body>
 
+    <!-- ==========================================================================
+       🍔 BOTÓN TRES RAYITAS Y MENÚ DESPLEGABLE
+       ========================================================================== -->
     <div class="menu-toggle" id="menuToggle">
         <span></span>
         <span></span>
@@ -45,16 +51,23 @@
     
     <div class="menu-overlay" id="menuOverlay"></div>
 
+    <!-- ==========================================================================
+       👑 ENCABEZADO PRINCIPAL
+       ========================================================================== -->
     <header>
         <h1>Teaching Feeling</h1>
         <p class="subtitle">Traducción por parte de <a href="https://www.youtube.com/@andres_lan2969" target="_blank">Andrés Lan y Shinra</a></p>
     </header>
 
+    <!-- ==========================================================================
+       📦 CONTENEDOR DE CUADROS PRINCIPALES
+       ========================================================================== -->
     <div class="container">
 
+        <!-- 📊 CUADRO 1: ESTADO DEL PROGRESO -->
         <section id="progress">
             <h2>Estado del Progreso</h2>
-            <p>Esto incluye escenas, imagenes, dialogos y todo el contenido del juego en general.</p>
+            <p>Esto includes escenas, imagenes, dialogos y todo el contenido del juego en general.</p>
             
             <div class="progress-wrapper" style="margin-top: 30px;">
                 <div class="progress-label">
@@ -67,15 +80,26 @@
             </div>
         </section>
 
+        <!-- 📥 CUADRO 2: DESCARGAS Y ENLACES (PARCHES ACTUALIZADOS VT2.0) -->
         <section id="download">
             <h2>Descargas y Enlaces</h2>
-            <p>Selecciona tu plataforma para descargar el parche o la versión correspondiente. Asegúrate de leer las instrucciones de instalación incluidas.</p>
+            <p style="margin-bottom: 15px;"><strong>Última versión disponible: VT2.0.</strong> Selecciona tu plataforma para descargar el parche o la versión correspondiente. Asegúrate de leer las instrucciones de instalación incluidas.</p>
             <div class="btn-container">
-                <a href="#" class="btn" target="_blank">Descargar Parche PC</a>
-                <a href="#" class="btn btn-secondary" target="_blank">Descargar APK (Android)</a>
+                <a href="https://github.com/Andreslan327/Teaching-Feeling_5.0-Spanish/releases/download/VT2.0/TeachingFeeling_Spanish_Patch_VT2.0.zip" class="btn" target="_blank">Descargar Parche PC</a>
+                <a href="https://download2388.mediafire.com/xrw2aewt4hugL1myqYc4m24K_lFUhEHc2mc3Mvq_heKAXQbD6YUf-btj7n6kgKDgbP67wtTXeB9D3a9RBpcR4tpdR4XtJ3J91yJUimbEkgJKYj4IJ5rumYG4FUSDOZWy8IsFoL67nNnYplD8oWgoWQ6eYOd4bpZRlcA60-9I5QZz/c6exymmckmnv1p4/Teaching+Feeling+5.0+espa%C3%B1ol.apk" class="btn btn-secondary" target="_blank">Descargar APK (Android)</a>
             </div>
         </section>
 
+        <!-- 🎮 CUADRO 3: NUEVA SECCIÓN JUEGO BASE -->
+        <section id="base-game">
+            <h2>Juego Base</h2>
+            <p style="margin-bottom: 15px;">Juego base para aplicar el parche para PC:</p>
+            <div class="btn-container">
+                <a href="https://download938.mediafire.com/ginh9jtq1klg6lejc2Kfh9UVuRDCXlPN-Xddw11SnQLim5rt9Yg2jh8zcW4z1oQ2ehKLTOpDvVVnqVOF9utJaq1GyONbITGdLvGNYp3M0sRpTHdS0L436333Lo4EzvZQcV7E3ba9mJFGCxg2_Yl_ag8iHjY02E_-F1pfLSXX_cjz/fl798dyw2dgef0u/Teaching+Feeling+5.0-Base-En.zip" class="btn" target="_blank" style="background: linear-gradient(135deg, #2b2b2b, #444444); border: 1px solid rgba(255, 255, 255, 0.2);">Descargar Juego Base PC</a>
+            </div>
+        </section>
+
+        <!-- 💬 CUADRO 4: CONTACTO Y COMUNIDAD -->
         <section id="contact">
             <h2>Contacto</h2>
             <p>Únete a nuestra comunidad para recibir soporte, reportar errores o estar al tanto de las novedades del parche en tiempo real.</p>
@@ -85,6 +109,7 @@
             </div>
         </section>
 
+        <!-- 📜 CUADRO 5: SOBRE EL PROYECTO -->
         <section id="about">
             <h2>Sobre el Proyecto</h2>
             <p>¡Bienvenido! Esta es la página oficial para seguir el progreso y descargar la traducción al español de la novela visual <strong>Teaching Feeling</strong>. Nuestro objetivo es ofrecer una traducción fiel, adaptada y testeada para que disfrutes de la experiencia completa sin perder ningún detalle de la historia.</p>
@@ -92,10 +117,16 @@
 
     </div>
 
+    <!-- ==========================================================================
+       🩸 PIE DE PÁGINA
+       ========================================================================== -->
     <footer>
         <p>&copy; 2026 - Creado por Andrés Lan para la comunidad.</p>
     </footer>
 
+    <!-- ==========================================================================
+       🕹️ SCRIPT INTERACTIVO PARA EL MENÚ
+       ========================================================================== -->
     <script>
         const menuToggle = document.getElementById('menuToggle');
         const sidebarMenu = document.getElementById('sidebarMenu');
