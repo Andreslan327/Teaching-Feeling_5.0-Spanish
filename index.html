@@ -3,8 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <meta property="og:title" content="Teaching Feeling - Traducción al Español por Andrés Lan y Shinra">
+    <meta property="og:description" content="Progreso actual al 49%, descargas del parche para PC y APK de Android. ¡Comunidad oficial en español!">
+    <meta property="og:url" content="https://andreslan327.github.io/Teaching-Feeling_5.0-Spanish/">
+    <meta property="og:image" content="https://andreslan327.github.io/Teaching-Feeling_5.0-Spanish/preview.png">
+    <meta property="og:type" content="website">
+
     <title>Teaching Feeling - Traducción al Español</title>
     <link rel="stylesheet" href="style.css">
+    
     <style>
         header .subtitle a {
             color: var(--accent-color);
@@ -31,12 +39,11 @@
         <ul>
             <li><a href="index.html" class="active">Inicio</a></li>
             <li><a href="galery.html">Galería de Fotos</a></li>
-            <li><a href="licence.html">Licencia</a></li> </ul>
+            <li><a href="licence.html">Licencia</a></li>
         </ul>
     </nav>
     
     <div class="menu-overlay" id="menuOverlay"></div>
-
 
     <header>
         <h1>Teaching Feeling</h1>
@@ -94,14 +101,12 @@
         const sidebarMenu = document.getElementById('sidebarMenu');
         const menuOverlay = document.getElementById('menuOverlay');
 
-        // Función para abrir/cerrar
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('open');
             sidebarMenu.classList.toggle('open');
             menuOverlay.classList.toggle('open');
         });
 
-        // Cerrar si hacen clic fuera del menú
         menuOverlay.addEventListener('click', () => {
             menuToggle.classList.remove('open');
             sidebarMenu.classList.remove('open');
