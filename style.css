@@ -62,7 +62,7 @@ body {
 /* --- CONTENEDOR CENTRAL CONTROLADO --- */
 .container {
     width: 100%;
-    max-width: 800px; /* Un pelo más estrecho para centrar mejor el impacto visual */
+    max-width: 800px; 
     padding: 0 20px;
     position: relative;
     z-index: 2;
@@ -76,14 +76,14 @@ header {
     position: relative;
     z-index: 2;
     margin: 0 auto;
-    animation: entradaHeader 1.2s cubic-bezier(0.21, 1.02, 0.43, 1.01) forwards;
+    animation: entradaHeader 1s cubic-bezier(0.21, 1.02, 0.43, 1.01) forwards;
 }
 
 @keyframes entradaHeader {
     0% {
         opacity: 0;
         transform: translateY(-20px);
-        filter: blur(10px);
+        filter: blur(8px);
     }
     100% {
         opacity: 1;
@@ -114,46 +114,41 @@ header .subtitle {
     text-shadow: 0 2px 8px rgba(0,0,0,0.8);
 }
 
-/* --- TARJETAS CON EFECTO REVELADO AL BAJAR (ANIMATION TIMELINE) --- */
+/* --- TARJETAS CON REVELADO PROGRESIVO EN TRANSPARENCIA (PAPEADO) --- */
 section {
     background-color: var(--card-bg);
     padding: 40px;
     margin: 35px 0;
     border-radius: 6px;
-    border-top: 2px solid var(--accent-color); /* Borde superior para mantener simetría central */
+    border-top: 2px solid var(--accent-color); 
     backdrop-filter: blur(12px); 
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.05);
-    text-align: left; /* Mantiene la lectura del contenido alineada a la izquierda dentro de la tarjeta */
+    text-align: left; 
     
-    /* Configuración de la animación fluida progresiva */
+    /* Animación fluida de entrada pura (sin el blur maluco) */
     view-transition-name: card-reveal;
     animation: revealOnScroll linear both;
     animation-timeline: view();
-    animation-range: entry 10% cover 40%;
+    animation-range: entry 0% cover 25%;
     transition: box-shadow 0.4s ease, border-top-color 0.4s ease, transform 0.4s ease;
 }
 
-/* Efecto hover interactivo en los cuadros */
+/* Efecto hover interactivo con sombreado premium expandido */
 section:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px);
     border-top-color: #ffffff;
-    box-shadow: 0 20px 45px rgba(128, 0, 32, 0.4), 0 5px 15px rgba(0, 0, 0, 0.6), inset 0 1px 2px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 45px rgba(128, 0, 32, 0.45), 0 5px 15px rgba(0, 0, 0, 0.6), inset 0 1px 2px rgba(255, 255, 255, 0.1);
 }
 
-/* Animación clave para desvanecer el blur y la opacidad progresivamente */
 @keyframes revealOnScroll {
     0% {
         opacity: 0;
-        transform: translateY(40px) scale(0.96);
-        filter: blur(12px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        transform: translateY(30px) scale(0.98);
     }
     100% {
         opacity: 1;
         transform: translateY(0) scale(1);
-        filter: blur(0);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
     }
 }
 
@@ -166,7 +161,7 @@ section h2 {
     padding-bottom: 12px;
     color: #ffffff;
     letter-spacing: 1px;
-    text-align: center; /* Títulos de secciones bien centrados */
+    text-align: center; 
 }
 
 /* --- BARRAS DE PROGRESO --- */
@@ -202,12 +197,12 @@ section h2 {
     box-shadow: 0 0 8px var(--accent-color);
 }
 
-/* --- BOTONES DINÁMICOS Y EXPLORABLES --- */
+/* --- BOTONES DINÁMICOS CON RESPUESTA PREMIUM --- */
 .btn-container {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
-    justify-content: center; /* Centra los botones en PC */
+    justify-content: center; 
     margin-top: 25px;
 }
 
@@ -220,17 +215,16 @@ section h2 {
     padding: 12px 30px;
     text-decoration: none;
     border-radius: 3px;
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     letter-spacing: 1px;
-    box-shadow: 0 4px 15px rgba(255, 69, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(255, 69, 0, 0.25);
     border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
-    overflow: hidden;
 }
 
 .btn:hover {
     transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 25px rgba(255, 69, 0, 0.5), 0 0 15px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 25px rgba(255, 69, 0, 0.55), 0 0 15px rgba(255, 255, 255, 0.15);
     border-color: #ffffff;
 }
 
@@ -292,7 +286,7 @@ footer {
 }
 
 /* ==========================================================================
-   🛠️ CORRECCIÓN DEFINITIVA ANDROID / MÓVILES (ANTI-ZOOM TOTAL)
+   🛠️ OPTIMIZACIÓN MÓVIL Y ADAPTACIÓN DE RANGOS MELA
    ========================================================================== */
 @media (max-width: 768px) {
     body {
@@ -300,7 +294,7 @@ footer {
     }
 
     .container {
-        padding: 0 12px; /* Espaciado simétrico para celulares */
+        padding: 0 12px; 
     }
 
     header {
@@ -308,7 +302,7 @@ footer {
     }
 
     header h1 {
-        font-size: 2.4rem; /* Ajuste perfecto para pantallas Android estándar */
+        font-size: 2.4rem; 
         letter-spacing: 2px;
         line-height: 1.2;
     }
@@ -319,10 +313,10 @@ footer {
     }
 
     section {
-        padding: 22px;   /* Mayor optimización de lectura */
+        padding: 22px;   
         margin: 25px 0;  
-        /* Suavizado leve de rango en pantallas móviles para mejorar rendimiento táctil */
-        animation-range: entry 5% cover 30%; 
+        /* Rango optimizado al toque en pantallas táctiles para evitar retrasos */
+        animation-range: entry 0% cover 18%; 
     }
 
     section h2 {
@@ -335,16 +329,14 @@ footer {
     }
 
     .btn {
-        width: 100%; /* Botones adaptables limpios a pantalla completa táctil */
+        width: 100%; 
         box-sizing: border-box;
     }
 }
 
 /* ==========================================================================
-   🍔 ESTILOS DEL MENÚ HAMBURGUESA FLUIDO (NIVEL DIOS)
+   🍔 ESTILOS DEL MENÚ HAMBURGUESA FLUIDO
    ========================================================================== */
-
-/* Botón de las 3 rayitas fijo en la esquina */
 .menu-toggle {
     position: fixed;
     top: 25px;
@@ -368,7 +360,6 @@ footer {
     box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
-/* Animación de las rayitas transformándose en "X" al abrir */
 .menu-toggle.open span:nth-child(1) {
     transform: translateY(13px) rotate(45deg);
     background-color: var(--accent-color);
@@ -381,14 +372,13 @@ footer {
     background-color: var(--accent-color);
 }
 
-/* El panel del menú lateral */
 .sidebar-menu {
     position: fixed;
     top: 0;
-    right: -300px; /* Escondido por defecto a la derecha */
+    right: -300px; 
     width: 280px;
     height: 100vh;
-    background-color: rgba(10, 10, 12, 0.9); /* Oscuro gótico con transparencia */
+    background-color: rgba(10, 10, 12, 0.9); 
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     box-shadow: -5px 0 30px rgba(0, 0, 0, 0.8);
@@ -400,7 +390,7 @@ footer {
 }
 
 .sidebar-menu.open {
-    right: 0; /* Se desliza hacia adentro */
+    right: 0; 
 }
 
 .menu-header {
@@ -426,7 +416,7 @@ footer {
 }
 
 .sidebar-menu li::before {
-    content: ""; /* Eliminamos la daga aquí para que el menú sea limpio */
+    content: ""; 
 }
 
 .sidebar-menu a {
@@ -442,11 +432,10 @@ footer {
 .sidebar-menu a:hover, 
 .sidebar-menu a.active {
     color: var(--accent-color);
-    padding-left: 10px; /* Efecto de desplazamiento sutil al pasar el mouse */
+    padding-left: 10px; 
     text-shadow: 0 0 10px rgba(255, 69, 0, 0.4);
 }
 
-/* Capa oscura que bloquea el resto de la pantalla al abrir */
 .menu-overlay {
     position: fixed;
     top: 0;
@@ -465,7 +454,6 @@ footer {
     pointer-events: auto;
 }
 
-/* Ajuste responsive para que el botón no estorbe en pantallas pequeñas */
 @media (max-width: 768px) {
     .menu-toggle {
         top: 20px;
